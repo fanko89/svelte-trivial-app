@@ -36,25 +36,25 @@ const API_URL = 'https://opentdb.com/api.php'
     let clicked = false
 
     //functions
-//     function escapeString(string) {
-//   let escapedString = "";
-//   for (let i = 0; i < string.length; i++){
-//     if (string[i] === '"') {
-//       escapedString += '\\"';
-//     } else if (string[i] === "'") {
-//       escapedString += "\\'";
-//     } else if (string.slice(i, i + 6) === "&#039;") {
-//       escapedString += "'";
-//       i += 5;
-//     } else if (string.slice(i, i + 6) === "&quot;") {
-//       escapedString += '"';
-//       i += 5;
-//     } else {
-//       escapedString += string[i];
-//     }
-//   }
-//   return escapedString;
-// }
+    function escapeString(string) {
+  let escapedString = "";
+  for (let i = 0; i < string.length; i++){
+    if (string[i] === '"') {
+      escapedString += '\\"';
+    } else if (string[i] === "'") {
+      escapedString += "\\'";
+    } else if (string.slice(i, i + 6) === "&#039;") {
+      escapedString += "'";
+      i += 5;
+    } else if (string.slice(i, i + 6) === "&quot;") {
+      escapedString += '"';
+      i += 5;
+    } else {
+      escapedString += string[i];
+    }
+  }
+  return escapedString;
+}
 
   function rightAnswer() {
     //maybe add more fuctionality, if I have time.
@@ -114,7 +114,7 @@ else {
       <p>Loading question...</p>
     {:else}
     <div class="flex  justify-center ... pt-20">
-      <h1 class="text-3xl font-bold">{question}</h1>
+      <h1 class="text-3xl font-bold">{escapeString(question)}</h1>
     </div>
       <form class="form-control" on:submit={handleSubmit}>
        
