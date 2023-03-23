@@ -1,5 +1,5 @@
 <script> 
-import * as sanitizeHtml from 'sanitize-html';   
+
 
 //API call
 const API_URL = 'https://opentdb.com/api.php'  
@@ -127,7 +127,7 @@ else {
           
           <label class="pt-6 pb-10 text-lg">
               <input type="radio" name="answer" class="radio radio-success ml-8" value={answer} on:change={handleAnswerSelection} />
-               {sanitizeHtml(answer)}
+               {answer}
              
             </label>
      
