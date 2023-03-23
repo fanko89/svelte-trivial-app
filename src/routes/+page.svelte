@@ -127,7 +127,7 @@ else {
           
           <label class="pt-6 pb-10 text-lg">
               <input type="radio" name="answer" class="radio radio-success ml-8" value={answer} on:change={handleAnswerSelection} />
-               {answer}
+               {escapeString(answer)}
              
             </label>
      
@@ -143,17 +143,20 @@ else {
    
     {/if}
 
-    <div class="flex justify-center ... pt-20">
-      <h2>Current selection:</h2>
+
       {#if selectedAnswer}
-        <p>You selected: {selectedAnswer}</p>
+      <div class="flex justify-center ... pt-20">
+        <p class="text-xl">You selected:  {selectedAnswer}</p>
+       </div>
+       <div class="flex justify-center ... pt-5">
         {#if correct === true}
-          <p>Your correct!</p>
+          <p class="text-2xl font-bold">Your correct!</p>
         {:else if correct === false}
-          <p>Your incorrect!</p>
+          <p class="text-2xl font-bold">Your incorrect!</p>
         {/if}
-      {/if}
       </div>
+      {/if}
+   
       <div class="flex justify-center ... pt-20">
     
         <p class="mr-10">Correct: {correctCount}</p> <p>Incorrect: {wrongCount}</p>
