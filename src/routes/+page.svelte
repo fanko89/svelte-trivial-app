@@ -36,9 +36,6 @@ const API_URL = 'https://opentdb.com/api.php'
     let clicked = false
 
     //functions
-
-
-
     function escapeString(string) {
   let escapedString = "";
   for (let i = 0; i < string.length; i++){
@@ -46,16 +43,18 @@ const API_URL = 'https://opentdb.com/api.php'
       escapedString += '\\"';
     } else if (string[i] === "'") {
       escapedString += "\\'";
-    } else if (string.slice(i, i + 5) === "&#039;") {
+    } else if (string.slice(i, i + 6) === "&#039;") {
       escapedString += "'";
-      i += 4;
+      i += 5;
+    } else if (string.slice(i, i + 6) === "&quot;") {
+      escapedString += '"';
+      i += 5;
     } else {
       escapedString += string[i];
     }
   }
   return escapedString;
 }
-
 
   function rightAnswer() {
     //maybe add more fuctionality, if I have time.
