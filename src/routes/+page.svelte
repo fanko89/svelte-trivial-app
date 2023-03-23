@@ -198,7 +198,7 @@ else {
               </select>
             </fieldset>
           </div>
-          <div class="flex justify-center ... pt-10">
+          <div class="flex justify-center ... pt-10 pb-40">
             <fieldset>
               <legend class="text-lg">Difficulty:</legend>
               <select on:change={handleDifficultyChange}>
